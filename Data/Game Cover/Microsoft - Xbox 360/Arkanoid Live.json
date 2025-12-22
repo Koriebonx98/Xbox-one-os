@@ -1,0 +1,19 @@
+Arkanoid Live! is a modern update of the classic ball bouncing game from the eighties. Player steer a paddle (called the Vaus) left and right at the bottom of the screen to bounce back a ball (there are six bouncing directions). A round is completed by busting all blocks on the screen and the player has to avoid having the ball disappear at the bottom.
+The game offers different modes of play and the main single player mode is divided into four episodes. There is a lives system where the number of lives is reduced when the ball touches the bottom of the screen and a barrier system where the ball can touch a barrier at the bottom of the screen a number of times before it disappears, along with different difficulty levels. Both systems can also be played as multiplayer co-op. In that mode the second player is however more of a helper, as the paddle floats below the one of the first player and it can only catch balls that are missed by the first. There are different types of blocks where each colour holds a different amount of points, blocks that need to be hit multiple times, moving blocks, and blocks that are impenetrable. Optionally enemies can be activated (Obobo, Konerd, Triphere, Pyradok, Klacker, Valion). They float through the screen and need to be hit. There is also a boss level at the end of the game. Certain blocks release bonuses for the Vaus:* Laser: fire a laser at the blocks, acquiring another one provides a power laser.
+Expand: increase the Vaus' size with 50%
+Catch: catch the ball and release it whenever you want
+Slow: slows down the speed of the ball
+Reduce: halves the Vaus' size but gives double points
+Megaball: the ball can break through blocks without bouncing
+Disruption: seven clones of the ball appear (multiball)
+Certain bonuses are only available according to the chosen system:* Lives Rules: + Break: an escape hatch to the rights open where you can leave the level to complete it + Thunder: a plasma shield appears below the Vaus to bounce back a lost ball once + Player Extension: extra life
+Barrier Rules:
+Warp: clears the current round
+Barrier: increases the barrier strength by one, with a maximum of ten
+Vanish: erase all blocks of the same colour as the one the ball touches next
+The game can also be played against another player in the VS mode (split-screen) with two rules:* Bust All: the first player to bust all blocks wins
+Bust Color: the first player to bust all blocks of a selected colour wins
+All games in VS mode are played with the barrier rule system. In the VS mode four extra bonuses are available not present in the other modes of the game:* Slow: slows down the speed of the opponent's ball
+Increase: create a number of normal blocks on the opponent's screen
+Reduce: halves the size of the opponent's Vaus
+Hard: creates a number of hard blocks on the opponent's screen
