@@ -138,14 +138,14 @@ namespace XboxShellApp
                     .OrderBy(a => a.Name)
                     .ToList();
 
-                // Add system apps with descriptions
+                // Add system apps with descriptions (in order)
                 allApps.Insert(0, new AppRecord
                 {
-                    Name = "AppStore",
+                    Name = "Game OS",
                     Exe = "",
                     ImagePath = "",
                     Source = "System",
-                    Description = "Browse and install applications, games, and content for your Game OS. Discover new experiences and manage your digital library.",
+                    Description = "Game OS is a Windows C# & WPF app made to manage libraries such as games, apps, media and ROMs. Experience your Windows PC like a game console without Steam Big Picture.",
                     IsGame = false
                 });
 
@@ -161,11 +161,11 @@ namespace XboxShellApp
 
                 allApps.Insert(0, new AppRecord
                 {
-                    Name = "Game OS",
+                    Name = "AppStore",
                     Exe = "",
                     ImagePath = "",
                     Source = "System",
-                    Description = "Game OS is a Windows C# & WPF app made to manage libraries such as games, apps, media and ROMs. Experience your Windows PC like a game console without Steam Big Picture.",
+                    Description = "Browse and install applications, games, and content for your Game OS. Discover new experiences and manage your digital library.",
                     IsGame = false
                 });
 
