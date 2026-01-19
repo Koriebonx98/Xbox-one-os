@@ -138,36 +138,38 @@ namespace XboxShellApp
                     .OrderBy(a => a.Name)
                     .ToList();
 
-                // Add system apps with descriptions (in order)
-                allApps.Insert(0, new AppRecord
+                // Add system apps with descriptions at the beginning of the list
+                var systemApps = new List<AppRecord>
                 {
-                    Name = "Game OS",
-                    Exe = "",
-                    ImagePath = "",
-                    Source = "System",
-                    Description = "Game OS is a Windows C# & WPF app made to manage libraries such as games, apps, media and ROMs. Experience your Windows PC like a game console without Steam Big Picture.",
-                    IsGame = false
-                });
-
-                allApps.Insert(0, new AppRecord
-                {
-                    Name = "PS5 OS",
-                    Exe = "",
-                    ImagePath = "",
-                    Source = "System",
-                    Description = "PlayStation 5 Operating System interface. Experience gaming like never before with ultra-fast loading, immersive haptic feedback, and stunning visuals.",
-                    IsGame = false
-                });
-
-                allApps.Insert(0, new AppRecord
-                {
-                    Name = "AppStore",
-                    Exe = "",
-                    ImagePath = "",
-                    Source = "System",
-                    Description = "Browse and install applications, games, and content for your Game OS. Discover new experiences and manage your digital library.",
-                    IsGame = false
-                });
+                    new AppRecord
+                    {
+                        Name = "AppStore",
+                        Exe = "",
+                        ImagePath = "",
+                        Source = "System",
+                        Description = "Browse and install applications, games, and content for your Game OS. Discover new experiences and manage your digital library.",
+                        IsGame = false
+                    },
+                    new AppRecord
+                    {
+                        Name = "PS5 OS",
+                        Exe = "",
+                        ImagePath = "",
+                        Source = "System",
+                        Description = "PlayStation 5 Operating System interface. Experience gaming like never before with ultra-fast loading, immersive haptic feedback, and stunning visuals.",
+                        IsGame = false
+                    },
+                    new AppRecord
+                    {
+                        Name = "Game OS",
+                        Exe = "",
+                        ImagePath = "",
+                        Source = "System",
+                        Description = "Game OS is a Windows C# & WPF app made to manage libraries such as games, apps, media and ROMs. Experience your Windows PC like a game console without Steam Big Picture.",
+                        IsGame = false
+                    }
+                };
+                allApps = systemApps.Concat(allApps).ToList();
 
                 File.WriteAllText(appsJsonPath, JsonSerializer.Serialize(allApps, new JsonSerializerOptions { WriteIndented = true }));
             }
