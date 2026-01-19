@@ -89,6 +89,7 @@ namespace XboxShellApp
                                 Exe = lnk,
                                 ImagePath = "",
                                 Source = "StartMenu",
+                                Description = "",
                                 IsGame = false
                             });
                         }
@@ -121,6 +122,7 @@ namespace XboxShellApp
                                         Exe = exePath,
                                         ImagePath = "",
                                         Source = "Registry",
+                                        Description = "",
                                         IsGame = false
                                     });
                                 }
@@ -135,6 +137,37 @@ namespace XboxShellApp
                     .Select(g => g.First())
                     .OrderBy(a => a.Name)
                     .ToList();
+
+                // Add system apps with descriptions
+                allApps.Insert(0, new AppRecord
+                {
+                    Name = "AppStore",
+                    Exe = "",
+                    ImagePath = "",
+                    Source = "System",
+                    Description = "Browse and install applications, games, and content for your Game OS. Discover new experiences and manage your digital library.",
+                    IsGame = false
+                });
+
+                allApps.Insert(0, new AppRecord
+                {
+                    Name = "PS5 OS",
+                    Exe = "",
+                    ImagePath = "",
+                    Source = "System",
+                    Description = "PlayStation 5 Operating System interface. Experience gaming like never before with ultra-fast loading, immersive haptic feedback, and stunning visuals.",
+                    IsGame = false
+                });
+
+                allApps.Insert(0, new AppRecord
+                {
+                    Name = "Game OS",
+                    Exe = "",
+                    ImagePath = "",
+                    Source = "System",
+                    Description = "Game OS is a Windows C# & WPF app made to manage libraries such as games, apps, media and ROMs. Experience your Windows PC like a game console without Steam Big Picture.",
+                    IsGame = false
+                });
 
                 File.WriteAllText(appsJsonPath, JsonSerializer.Serialize(allApps, new JsonSerializerOptions { WriteIndented = true }));
             }
@@ -262,6 +295,7 @@ namespace XboxShellApp
                             Exe = app.Exe,
                             ImagePath = app.ImagePath,
                             Folder = null,
+                            Description = app.Description,
                             IsApp = true,
                             IsGame = app.IsGame
                         });
@@ -371,6 +405,7 @@ namespace XboxShellApp
             public string Exe { get; set; }
             public string ImagePath { get; set; }
             public string Source { get; set; }
+            public string Description { get; set; }
             public bool IsGame { get; set; }
         }
     }

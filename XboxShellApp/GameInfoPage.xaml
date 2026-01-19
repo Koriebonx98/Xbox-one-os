@@ -8,7 +8,13 @@
             <TextBlock x:Name="PlayTimeBlock" Foreground="#AACCFF" FontSize="20" Margin="0,0,0,30" TextAlignment="Center"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button x:Name="PlayBtn" Content="Play" Width="110" Height="44" Margin="0,0,12,0" FontSize="18" Background="#2d7dff" Foreground="White"/>
-                <Button x:Name="OptionsBtn" Content="..." Width="44" Height="44" FontSize="22"/>
+                <Button x:Name="OptionsBtn" Content="..." Width="44" Height="44" FontSize="22">
+                    <Button.ContextMenu>
+                        <ContextMenu x:Name="OptionsContextMenu">
+                            <MenuItem x:Name="AboutMenuItem" Header="About"/>
+                        </ContextMenu>
+                    </Button.ContextMenu>
+                </Button>
             </StackPanel>
             <Button x:Name="BackBtn" Content="⟵ Back" Width="110" Height="38" Margin="0,32,0,0" FontSize="15" Background="#222C48" Foreground="White" HorizontalAlignment="Center"/>
         </StackPanel>

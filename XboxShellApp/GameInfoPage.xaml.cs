@@ -27,7 +27,8 @@ namespace XboxShellApp
                 : vm.TypeLabel;
 
             PlayBtn.Click += PlayBtn_Click;
-            OptionsBtn.Click += (s, e) => MessageBox.Show("Options coming soon!");
+            OptionsBtn.Click += (s, e) => OptionsBtn.ContextMenu.IsOpen = true;
+            AboutMenuItem.Click += AboutMenuItem_Click;
             BackBtn.Click += (s, e) => _mainWindow.SwitchToGamesApps();
         }
 
@@ -67,6 +68,28 @@ namespace XboxShellApp
             {
                 MessageBox.Show($"No executable found for this {_vm.TypeLabel.ToLower()}.");
             }
+        }
+
+        private void AboutMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            string aboutText = $"Name: {_vm.Name}\n";
+            aboutText += $"Type: {_vm.TypeLabel}\n";
+            
+            if (!string.IsNullOrWhiteSpace(_vm.Description))
+            {
+                aboutText += $"\nDescription:\n{_vm.Description}";
+            }
+            else
+            {
+                aboutText += "\nNo description available.";
+            }
+            
+            if (!string.IsNullOrWhiteSpace(_vm.Exe))
+            {
+                aboutText += $"\n\nExecutable: {_vm.Exe}";
+            }
+            
+            MessageBox.Show(aboutText, "About", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }
