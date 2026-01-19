@@ -23,7 +23,7 @@ namespace XboxShellApp
         {
             try
             {
-                var mailtoUrl = $"mailto:{CONTACT_EMAIL}?subject={EMAIL_SUBJECT}";
+                var mailtoUrl = $"mailto:{CONTACT_EMAIL}?subject={Uri.EscapeDataString(EMAIL_SUBJECT)}";
                 Process.Start(new ProcessStartInfo
                 {
                     FileName = mailtoUrl,
