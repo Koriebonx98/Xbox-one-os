@@ -6,6 +6,7 @@
         public string Exe { get; set; }
         public string ImagePath { get; set; }
         public string Folder { get; set; }
+        public string Description { get; set; }
         public bool IsGame { get; set; }
         public bool IsApp { get; set; }
         public bool IsMusic { get; set; }
