@@ -6,13 +6,31 @@
             <Button x:Name="BackToDashboardBtn" Content="⟵ Back" Width="110" Height="38" Margin="0,0,18,0" FontSize="16" Background="#2d7dff" Foreground="White"/>
             <TextBlock Text="Settings" FontSize="32" Foreground="#fff" FontWeight="Bold" VerticalAlignment="Center"/>
         </StackPanel>
-        <UniformGrid Rows="2" Columns="3" Margin="44,90,44,44">
-            <Button Content="General" FontSize="22" Background="#2d7dff" Foreground="White" Margin="16" Height="160"/>
-            <Button Content="Account" FontSize="22" Background="#1b87e0" Foreground="White" Margin="16" Height="160"/>
-            <Button Content="Display" FontSize="22" Background="#36373f" Foreground="White" Margin="16" Height="160"/>
-            <Button Content="Network" FontSize="22" Background="#2298fc" Foreground="White" Margin="16" Height="160"/>
-            <Button Content="System" FontSize="22" Background="#4268b1" Foreground="White" Margin="16" Height="160"/>
-            <Button Content="Accessibility" FontSize="22" Background="#187a37" Foreground="White" Margin="16" Height="160"/>
-        </UniformGrid>
+        <Grid Margin="44,90,44,44">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <UniformGrid Grid.Row="0" Rows="2" Columns="3">
+                <Button Content="General" FontSize="22" Background="#2d7dff" Foreground="White" Margin="16" Height="160"/>
+                <Button Content="Account" FontSize="22" Background="#1b87e0" Foreground="White" Margin="16" Height="160"/>
+                <Button Content="Display" FontSize="22" Background="#36373f" Foreground="White" Margin="16" Height="160"/>
+                <Button Content="Network" FontSize="22" Background="#2298fc" Foreground="White" Margin="16" Height="160"/>
+                <Button Content="System" FontSize="22" Background="#4268b1" Foreground="White" Margin="16" Height="160"/>
+                <Button Content="Accessibility" FontSize="22" Background="#187a37" Foreground="White" Margin="16" Height="160"/>
+            </UniformGrid>
+            <!-- Contact Me Section -->
+            <Border Grid.Row="1" Background="#252634" CornerRadius="10" Padding="20" Margin="16,20,16,16">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBlock Text="Contact Me:" FontSize="18" Foreground="White" VerticalAlignment="Center" Margin="0,0,12,0"/>
+                    <Button x:Name="EmailContactBtn" Background="#107C10" BorderThickness="0" Padding="12,8" CornerRadius="6" Cursor="Hand">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="✉" FontSize="22" Foreground="White" Margin="0,0,8,0" VerticalAlignment="Center"/>
+                            <TextBlock Text="Koriegrant@icloud.com" FontSize="16" Foreground="White" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </Border>
+        </Grid>
     </Grid>
 </UserControl>
