@@ -51,11 +51,10 @@ def create_switch_game_folders():
         
         # Create the folder
         if not os.path.exists(folder_path):
-            os.makedirs(folder_path, exist_ok=True)
+            os.makedirs(folder_path)
             # Create .gitkeep file to track empty directory in git
             gitkeep_path = os.path.join(folder_path, '.gitkeep')
-            with open(gitkeep_path, 'w') as f:
-                pass
+            open(gitkeep_path, 'w').close()
             print(f"Created folder for {game_name}: {title_id}")
             created_count += 1
         else:

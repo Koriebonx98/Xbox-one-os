@@ -31,6 +31,11 @@ This will create a new folder at `Data/Nintendo - Switch/Games/{TitleID}` for ea
 
 Nintendo Switch Title IDs are 16-character hexadecimal strings (e.g., `0100000000010000`).
 
+## Requirements
+
+- Python 3.6 or higher
+- No external dependencies (uses only Python standard library)
+
 ## Notes
 
 - Empty directories are tracked in git using `.gitkeep` files
