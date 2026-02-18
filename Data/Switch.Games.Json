@@ -1,0 +1,72 @@
+[
+  {
+    "TitleID": "0100000000010000",
+    "Name": "Super Mario Odyssey",
+    "Genre": "Platform",
+    "Publisher": "Nintendo",
+    "ReleaseDate": "2017-10-27"
+  },
+  {
+    "TitleID": "01006F8002326000",
+    "Name": "Animal Crossing: New Horizons",
+    "Genre": "Simulation",
+    "Publisher": "Nintendo",
+    "ReleaseDate": "2020-03-20"
+  },
+  {
+    "TitleID": "0100ABF008968000",
+    "Name": "The Legend of Zelda: Breath of the Wild",
+    "Genre": "Action-Adventure",
+    "Publisher": "Nintendo",
+    "ReleaseDate": "2017-03-03"
+  },
+  {
+    "TitleID": "01006A800016E000",
+    "Name": "Super Smash Bros. Ultimate",
+    "Genre": "Fighting",
+    "Publisher": "Nintendo",
+    "ReleaseDate": "2018-12-07"
+  },
+  {
+    "TitleID": "0100EA80032EA000",
+    "Name": "Mario Kart 8 Deluxe",
+    "Genre": "Racing",
+    "Publisher": "Nintendo",
+    "ReleaseDate": "2017-04-28"
+  },
+  {
+    "TitleID": "01003BC0000A0000",
+    "Name": "Splatoon 2",
+    "Genre": "Shooter",
+    "Publisher": "Nintendo",
+    "ReleaseDate": "2017-07-21"
+  },
+  {
+    "TitleID": "0100F2C0115B6000",
+    "Name": "Pokemon Sword",
+    "Genre": "RPG",
+    "Publisher": "Nintendo",
+    "ReleaseDate": "2019-11-15"
+  },
+  {
+    "TitleID": "01008DB008C2C000",
+    "Name": "Pokemon Shield",
+    "Genre": "RPG",
+    "Publisher": "Nintendo",
+    "ReleaseDate": "2019-11-15"
+  },
+  {
+    "TitleID": "0100A3900C3E2000",
+    "Name": "The Legend of Zelda: Tears of the Kingdom",
+    "Genre": "Action-Adventure",
+    "Publisher": "Nintendo",
+    "ReleaseDate": "2023-05-12"
+  },
+  {
+    "TitleID": "01003D200BAA2000",
+    "Name": "Luigi's Mansion 3",
+    "Genre": "Action-Adventure",
+    "Publisher": "Nintendo",
+    "ReleaseDate": "2019-10-31"
+  }
+]
