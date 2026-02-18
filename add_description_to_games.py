@@ -15,6 +15,10 @@ import os
 from pathlib import Path
 
 
+# Common field names that indicate a game entry
+GAME_INDICATOR_FIELDS = ['Name', 'name', 'Title', 'title', 'GameName', 'game_name']
+
+
 def add_description_to_games(data, description_value=""):
     """
     Recursively add 'Description' field to game entries.
@@ -30,8 +34,7 @@ def add_description_to_games(data, description_value=""):
         # If this dict doesn't have a Description key, add it
         if 'Description' not in data:
             # Check if this looks like a game entry (has common game fields)
-            game_indicators = ['Name', 'name', 'Title', 'title', 'GameName', 'game_name']
-            if any(key in data for key in game_indicators):
+            if any(key in data for key in GAME_INDICATOR_FIELDS):
                 data['Description'] = description_value
         
         # Recursively process all values in the dict
@@ -81,8 +84,7 @@ def process_json_file(input_file, output_file=None, backup=True):
         count = 0
         if isinstance(obj, dict):
             # Check if this dict looks like a game
-            game_indicators = ['Name', 'name', 'Title', 'title', 'GameName', 'game_name']
-            if any(key in obj for key in game_indicators):
+            if any(key in obj for key in GAME_INDICATOR_FIELDS):
                 count = 1
             # Recursively count in nested structures
             for value in obj.values():
