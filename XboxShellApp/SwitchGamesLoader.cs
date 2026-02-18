@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Text.Json;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace XboxShellApp
 {
@@ -40,6 +41,12 @@ namespace XboxShellApp
 
         public static void CreateGameFiles()
         {
+            // Run asynchronously to avoid blocking UI thread
+            Task.Run(() => CreateGameFilesAsync());
+        }
+
+        private static void CreateGameFilesAsync()
+        {
             var games = LoadSwitchGames();
             string gamesDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "Nintendo - Switch", "Games");
             
@@ -61,7 +68,11 @@ namespace XboxShellApp
                                    $"Publisher: {game.Publisher}\n" +
                                    $"Release Date: {game.ReleaseDate}";
                     
-                    File.WriteAllText(gameFilePath, content);
+                    // Only write if file doesn't exist or content has changed
+                    if (!File.Exists(gameFilePath) || File.ReadAllText(gameFilePath) != content)
+                    {
+                        File.WriteAllText(gameFilePath, content);
+                    }
                 }
                 catch (Exception ex)
                 {
