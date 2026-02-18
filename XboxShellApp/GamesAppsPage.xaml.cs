@@ -30,6 +30,7 @@ namespace XboxShellApp
             try
             {
                 EnsureInstalledAppsJsonExists();
+                SwitchGamesLoader.CreateGameFiles();
                 LoadDrives();
                 LoadInstalledApps();
                 LoadTiles();
