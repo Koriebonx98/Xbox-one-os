@@ -41,11 +41,11 @@ namespace XboxShellApp
 
         public static void CreateGameFiles()
         {
-            // Run asynchronously to avoid blocking UI thread
-            Task.Run(() => CreateGameFilesAsync());
+            // Run on background thread to avoid blocking UI thread
+            Task.Run(() => CreateGameFilesInternal());
         }
 
-        private static void CreateGameFilesAsync()
+        private static void CreateGameFilesInternal()
         {
             var games = LoadSwitchGames();
             string gamesDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "Nintendo - Switch", "Games");
@@ -61,16 +61,16 @@ namespace XboxShellApp
                 
                 try
                 {
-                    // Write game name and metadata to the file
-                    string content = $"{game.Name}\n" +
-                                   $"Title ID: {game.TitleID}\n" +
-                                   $"Genre: {game.Genre}\n" +
-                                   $"Publisher: {game.Publisher}\n" +
-                                   $"Release Date: {game.ReleaseDate}";
-                    
-                    // Only write if file doesn't exist or content has changed
-                    if (!File.Exists(gameFilePath) || File.ReadAllText(gameFilePath) != content)
+                    // Only write if file doesn't exist
+                    if (!File.Exists(gameFilePath))
                     {
+                        // Write game name and metadata to the file
+                        string content = $"{game.Name}\n" +
+                                       $"Title ID: {game.TitleID}\n" +
+                                       $"Genre: {game.Genre}\n" +
+                                       $"Publisher: {game.Publisher}\n" +
+                                       $"Release Date: {game.ReleaseDate}";
+                        
                         File.WriteAllText(gameFilePath, content);
                     }
                 }
