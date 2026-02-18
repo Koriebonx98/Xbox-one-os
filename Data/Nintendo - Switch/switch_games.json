@@ -1,0 +1,14 @@
+{
+  "games": [
+    {
+      "TitleID": "010000300C79C000",
+      "Name": "Nintendo Switch Game",
+      "Description": "Nintendo Switch game with Title ID 010000300C79C000",
+      "GameDirectory": "Data/Nintendo - Switch/Games/010000300C79C000",
+      "CoverImage": "Data/Game Cover/Nintendo - Switch/010000300C79C000/Cover.jpg",
+      "BackgroundImage": "Data/Game Cover/Nintendo - Switch/010000300C79C000/Background.png",
+      "DescriptionFile": "Data/Game Cover/Nintendo - Switch/010000300C79C000/Desc.json",
+      "HasBackground": true
+    }
+  ]
+}
