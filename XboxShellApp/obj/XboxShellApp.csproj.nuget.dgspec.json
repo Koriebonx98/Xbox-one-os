@@ -10,7 +10,7 @@
         "projectUniqueName": "/home/runner/work/Game-OS/Game-OS/XboxShellApp/XboxShellApp.csproj",
         "projectName": "XboxShellApp",
         "projectPath": "/home/runner/work/Game-OS/Game-OS/XboxShellApp/XboxShellApp.csproj",
-        "packagesPath": "/home/runner/.nuget/packages/",
+        "packagesPath": "/home/runner/work/Game-OS/.codeql-scratch/dbs/csharp/working/packages",
         "outputPath": "/home/runner/work/Game-OS/Game-OS/XboxShellApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
