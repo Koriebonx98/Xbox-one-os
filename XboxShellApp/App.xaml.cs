@@ -9,13 +9,18 @@ namespace XboxShellApp
         {
             base.OnStartup(e);
             
-            // Set User-Agent for all HTTP requests (including image downloads)
-            ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+            // Configure system proxy for HTTP requests
             WebRequest.DefaultWebProxy = WebRequest.GetSystemWebProxy();
             
             // Configure User-Agent for HTTP image requests
-            typeof(WebRequest).GetField("s_DefaultUserAgent", System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic)
-                ?.SetValue(null, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 GameOS/1.0");
+            // Using reflection to set the default User-Agent for WebRequest
+            var userAgentField = typeof(WebRequest).GetField("s_DefaultUserAgent", 
+                System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic);
+            
+            if (userAgentField != null)
+            {
+                userAgentField.SetValue(null, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 GameOS/1.0");
+            }
         }
     }
 }

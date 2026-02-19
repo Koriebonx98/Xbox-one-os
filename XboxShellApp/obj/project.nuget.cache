@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "9p5Zod8jSic=",
+  "dgSpecHash": "j6EaenmLsrM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Korie\\Desktop\\Xbox one os\\XboxShellApp\\XboxShellApp\\XboxShellApp.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/runner/work/Game-OS/Game-OS/XboxShellApp/XboxShellApp.csproj",
+  "expectedPackageFiles": [
+    "/home/runner/.nuget/packages/microsoft.netcore.app.ref/6.0.36/microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
+    "/home/runner/.nuget/packages/microsoft.windowsdesktop.app.ref/6.0.36/microsoft.windowsdesktop.app.ref.6.0.36.nupkg.sha512",
+    "/home/runner/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.36/microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512",
+    "/home/runner/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.36/microsoft.netcore.app.host.linux-x64.6.0.36.nupkg.sha512"
+  ],
   "logs": []
 }
