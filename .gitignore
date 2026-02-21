@@ -1,0 +1,6 @@
+# Python
+__pycache__/
+*.pyc
+
+# Scraper logs
+scrape_xbox360_games.log
