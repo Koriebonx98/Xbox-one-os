@@ -1,0 +1,38 @@
+name: Scrape Xbox 360 Game Covers
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Run weekly on Sundays at 02:00 UTC to pick up any newly added games
+    - cron: "0 2 * * 0"
+
+jobs:
+  scrape-covers:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run cover scraper
+        env:
+          STEAMGRIDDB_API_KEY: ${{ secrets.STEAMGRIDDB_API_KEY }}
+        run: python scrape_xbox360_games.py
+
+      - name: Commit downloaded covers and updated JSON
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "Xbox 360.Games.json" "Data/Game Cover/Microsoft - Xbox 360/"
+          git diff --cached --quiet || git commit -m "chore: update Xbox 360 game covers [skip ci]"
+          git push
